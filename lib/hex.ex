@@ -5,7 +5,8 @@ defmodule Hexer.Hex do
     |> Enum.chunk_every(16)
     |> Enum.map(fn line -> Enum.join(line, ", ") end)
     |> Enum.join("\n")
+    |> IO.puts
   end
 
-  def print(text), do: "Unable to format: #{inspect text} as it isn't a binary"
+  def print(text), do: IO.puts "Unable to format: #{inspect text} as it isn't a binary"
 end
